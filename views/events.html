@@ -1,0 +1,45 @@
+{% extends './layout.html' %}
+
+{% block content %}
+
+<h3>Add Medal</h3>
+<form action="/events" method="POST">
+  <div>
+    <label>Event</label>
+    <input type="text" name="name" placeholder="Event name"/>
+  </div>
+  <div>
+    <label>Gold</label>
+    <input type="text" name="goldWinner" placeholder="Name" />
+    <input type="text" name="goldCountry" placeholder="Country"/>
+  </div>
+  <div>
+    <label>Silver</label>
+    <input type="text" name="silverWinner" placeholder="Name" />
+    <input type="text" name="silverCountry" placeholder="Country" />
+  </div>
+  <div>
+    <label>Bronze</label>
+    <input type="text" name="bronzeWinner" placeholder="Name" />
+    <input type="text" name="bronzeCountry" placeholder="Country" />
+  </div>
+  <button>Add Medal</button>
+
+</form>
+
+
+
+
+<ul class="list-group">
+{% for event in events %}
+  <li class="list-group-item">
+    <a href="/events/{{event.id}}">{{event.name}}</a>
+    <form action="/events/{{event.id}}?_method=DELETE" method="POST">
+      <button>Delete Event</button>
+    </form>
+  </li>
+
+{% endfor %}
+</ul>
+
+{% endblock %}

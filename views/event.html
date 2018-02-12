@@ -1,0 +1,21 @@
+{% extends './layout.html' %}
+
+{% block content %}
+
+
+<h3>{{ event.name }}</h3>
+
+<ul>
+  <li>
+    Gold: {{event.goldWinner}} ({{ event.goldCountry }})
+  </li>
+  <li>
+    Silver: {{event.silverWinner}} ({{ event.silverCountry }})
+  </li>
+  <li>
+    Bronze: {{event.bronzeWinner}} ({{ event.bronzeCountry }})
+  </li>
+</ul>
+
+
+{% endblock %}
