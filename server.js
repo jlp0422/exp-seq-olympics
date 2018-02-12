@@ -32,7 +32,7 @@ app.use((err, req, res, next) => {
   next()
 })
 
-const port = 3000 || process.env.PORT;
+const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`listening on port ${port}`))
 
 db.sync()
