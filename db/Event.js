@@ -1,5 +1,5 @@
 const conn = require('./conn');
-const Sequelize = conn.Sequelize;
+const {Sequelize} = conn;
 
 const Event = conn.define('events', {
   name: {
