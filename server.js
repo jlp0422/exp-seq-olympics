@@ -27,11 +27,10 @@ app.get('/', (req, res, next) => {
     .catch(next)
 })
 
-// app.use((err, req, res, next) => {
-//   res.sendStatus(404)
-//   next()
-// })
-
+app.use((err, req, res, next) => {
+  res.sendStatus(404)
+  next()
+})
 
 const port = 3000 || process.env.PORT;
 app.listen(port, () => console.log(`listening on port ${port}`))

@@ -1,0 +1,63 @@
+{% extends './layout.html' %} {% block content %}
+
+
+<h3>Updating: {{ event.name }}</h3>
+
+
+<form action="/events/{{event.id}}?_method=PATCH" method="POST" style="margin-bottom:20px">
+  <div class="form-row" style="margin:0;">
+    <div class="form-group col-md-12">
+      <label style="font-weight: bold">Event</label>
+      <input class="form-control" type="text" name="name" value="{{event.name}}" />
+    </div>
+  </div>
+  <!-- GOLD -->
+  <div class="form-row" style="margin:0;">
+    <div class="form-group col-md-7">
+      <label style="font-weight: bold">Gold Medal</label>
+      <input type="text" class="form-control" name="goldWinner" value="{{event.goldWinner}}" />
+    </div>
+    <div class="form-group col-md-5">
+      <label>&nbsp;</label>
+      <input type="text" class="form-control" name="goldCountry" value="{{event.goldCountry}}" />
+    </div>
+  </div>
+  <!-- SILVER -->
+  <div class="form-row" style="margin:0;">
+    <div class="form-group col-md-7">
+      <label style="font-weight: bold">Silver Medal</label>
+      <input type="text" class="form-control" name="silverWinner" value="{{event.silverWinner}}" />
+    </div>
+    <div class="form-group col-md-5">
+      <label>&nbsp;</label>
+      <input type="text" class="form-control" name="silverCountry" value="{{event.silverCountry}}" />
+    </div>
+  </div>
+  <!-- BRONZE -->
+  <div class="form-row" style="margin:0;">
+    <div class="form-group col-md-7">
+      <label style="font-weight: bold">Bronze Medal</label>
+      <input type="text" class="form-control" name="bronzeWinner" value="{{event.bronzeWinner}}" />
+    </div>
+    <div class="form-group col-md-5">
+      <label>&nbsp;</label>
+      <input type="text" class="form-control" name="bronzeCountry" value="{{event.bronzeCountry}}" />
+    </div>
+  </div>
+  <button class="btn btn-outline-primary">Save Changes</button>
+</form>
+
+<a href="/events">
+  <button class="btn btn-outline-secondary" style="margin:0 0 20px">Cancel Edit</button>
+</a>
+
+<form action="/events/{{event.id}}?_method=DELETE" method="POST" style="margin:0px 0px 20px">
+  <button class="btn btn-danger">Delete Event</button>
+</form>
+
+<br>
+<a href="/events">&laquo; Back to all events</a>
+
+
+
+{% endblock %}
