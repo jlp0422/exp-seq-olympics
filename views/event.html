@@ -5,19 +5,19 @@
 
 <h3>{{ event.name }}</h3>
 
-<ul>
-  <li>
-    Gold: {{event.goldWinner}} ({{ event.goldCountry }})
+<ul class="list-group">
+  <li class="list-group-item">
+    Gold: <span style="font-weight:bold">{{event.goldWinner}}</span> ({{ event.goldCountry }})
   </li>
-  <li>
-    Silver: {{event.silverWinner}} ({{ event.silverCountry }})
+  <li class="list-group-item">
+    Silver: <span style="font-weight:bold">{{event.silverWinner}}</span> ({{ event.silverCountry }})
   </li>
-  <li>
-    Bronze: {{event.bronzeWinner}} ({{ event.bronzeCountry }})
+  <li class="list-group-item">
+    Bronze: <span style="font-weight:bold">{{event.bronzeWinner}}</span> ({{ event.bronzeCountry }})
   </li>
 </ul>
 
-<a href="/events/{{event.id}}/edit"><button class="btn btn-outline-success">Edit {{event.name}}</button></a>
+<a href="/events/{{event.id}}/edit"><button class="btn btn-outline-success" style="margin:20px 0px">Edit {{event.name}}</button></a>
 <br>
 <a href="/events">&laquo; Back to all events</a>
 {% endblock %}
