@@ -4,7 +4,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 const db = require('./db');
-const { Event } = db.models;
+const { OlympicEvent } = db.models;
 const nunjucks = require('nunjucks')
 nunjucks.configure({ noCache: true })
 

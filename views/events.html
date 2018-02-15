@@ -5,7 +5,15 @@
 <h3>Add Event</h3>
 <form action="/events/{{event.id}}" method="POST" style="margin-bottom:20px;">
   <div class="form-row" style="margin:0;">
-    <div class="form-group col-md-12">
+    <div class="form-group col-md-2">
+      <label style="font-weight: bold">Gender</label>
+      <select name="gender" class="form-control">
+        <option selected>Select...</option>
+        <option>M</option>
+        <option>F</option>
+      </select>
+    </div>
+    <div class="form-group col-md-10">
       <label style="font-weight: bold">Event</label>
       <input class="form-control" type="text" name="name" placeholder="Event name"/>
     </div>
@@ -52,10 +60,10 @@
 
   <li class="list-group-item">
     <a href="/events/{{event.id}}">
-      <h5>{{event.name}}</h5>
+      <h5>{{event.gender}} {{event.name}}</h5>
     </a>
     <a href="/events/{{event.id}}/edit">
-      <button style="margin:5px 0px 15px;" class="btn btn-success">Edit Event</button>
+      <button style="margin:5px 0px 15px;" class="btn btn-outline-success">Edit Event</button>
     </a>
     <form action="/events/{{event.id}}?_method=DELETE" method="POST">
       <button class="btn btn-outline-danger">Delete Event</button>

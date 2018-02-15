@@ -1,7 +1,15 @@
 const conn = require('./conn');
 const { Sequelize } = conn;
 
-const Event = conn.define('events', {
+const OlympicEvent = conn.define('events', {
+  gender: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    get: function() {
+      if (this.getDataValue('gender') === 'M') return `Men's`
+      if (this.getDataValue('gender') === 'F') return `Women's`
+    }
+  },
   name: {
     type: Sequelize.STRING,
     allowNull: false,
@@ -39,4 +47,4 @@ const Event = conn.define('events', {
   },
 })
 
-module.exports = Event
+module.exports = OlympicEvent

@@ -1,5 +1,5 @@
 const conn = require('./conn');
-const Event = require('./Event')
+const OlympicEvent = require('./Event')
 
 const sync = () => {
   return conn.sync({force: true})
@@ -7,8 +7,9 @@ const sync = () => {
 
 const seed = () => {
   Promise.all([
-    Event.create({
-      name: 'Men\'s Snowboard Slopestyle',
+    OlympicEvent.create({
+      gender: 'M',
+      name: 'Snowboard Slopestyle',
       goldWinner: 'Red Gerard',
       goldCountry: 'USA',
       silverWinner: 'Max Parrot',
@@ -16,8 +17,9 @@ const seed = () => {
       bronzeWinner: 'Mark McMorris',
       bronzeCountry: 'Canada'
     }),
-    Event.create({
-      name: 'Men\'s Ski Jumping',
+    OlympicEvent.create({
+      gender: 'M',
+      name: 'Ski Jumping',
       goldWinner: 'Andreas Wellinger',
       goldCountry: 'Germany',
       silverWinner: 'Johann Andre Forfang',
@@ -25,8 +27,9 @@ const seed = () => {
       bronzeWinner: 'Robert Johansson',
       bronzeCountry: 'Norway'
     }),
-    Event.create({
-      name: 'Men\'s Luge',
+    OlympicEvent.create({
+      gender: 'M',
+      name: 'Luge',
       goldWinner: 'David Gleirscher',
       goldCountry: 'Austria',
       silverWinner: 'Chris Mazdzer',
@@ -41,6 +44,6 @@ module.exports = {
   sync,
   seed,
   models: {
-    Event
+    OlympicEvent
   }
 }
